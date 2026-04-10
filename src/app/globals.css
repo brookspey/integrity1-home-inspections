@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-open-sans), Arial, sans-serif;
+  --font-heading: var(--font-libre-franklin), sans-serif;
+
+  /* Site colors */
+  --color-navy-dark: #1D2943;
+  --color-navy: #263556;
+  --color-blue: #3E64AF;
+  --color-blue-accent: #2EA3F2;
+  --color-gold-light: #DBD7A8;
+  --color-gold-dark: #ACA47F;
+  --color-body-text: #666666;
+  --color-dark-text: #222222;
+  --color-medium-text: #4E4E4E;
+  --color-light-gray: #EDEDED;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 23.8px;
+  color: var(--color-body-text);
+  background-color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+p {
+  font-size: 16px;
+  line-height: 27px;
+}
+
+/* CTA Button base */
+.btn-cta {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-cta-blue {
+  background-color: var(--color-blue-accent);
+  color: var(--color-white);
+  border: 2px solid var(--color-blue-accent);
+}
+
+.btn-cta-blue:hover {
+  background-color: transparent;
+  color: var(--color-blue-accent);
+}
+
+.btn-cta-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+}
+
+.btn-cta-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-navy);
+}
+
+/* Wave divider */
+.wave-divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
