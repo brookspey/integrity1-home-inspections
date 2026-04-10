@@ -5,10 +5,10 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about-home-inspector-joel-donoghue/" },
+  { label: "About", href: "/about" },
   {
     label: "Inspection Services",
-    href: "/west-palm-beach-home-inspections-services/",
+    href: "/services",
   },
 ] as const;
 

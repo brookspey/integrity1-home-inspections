@@ -109,7 +109,7 @@ export function ThreeQuestionsSection() {
             </p>
 
             <Link
-              href="/west-palm-beach-home-inspections-services/"
+              href="/services"
               className="inline-block uppercase font-semibold"
               style={{
                 border: "2px solid #2EA3F2",
