@@ -131,7 +131,7 @@ export default function AboutPage() {
           backgroundImage: "url(/images/joelbanner2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center top",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: "scroll",
           padding: "500px 0 80px",
         }}
       >
