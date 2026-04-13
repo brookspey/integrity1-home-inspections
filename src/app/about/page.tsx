@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata = {
@@ -33,16 +32,16 @@ export default function AboutPage() {
           className="mx-auto flex flex-col lg:flex-row gap-10"
           style={{ maxWidth: 1080, padding: "0 20px" }}
         >
-          {/* Left Column: Inspector Image */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-start">
-            <Image
-              src="/images/Home-Inspector-Blank-Image.png"
-              alt="Certified Home Inspector Joel Donoghue"
-              width={480}
-              height={480}
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
-          </div>
+          {/* Left Column: Inspector Image (background image on column) */}
+          <div
+            className="lg:w-1/2"
+            style={{
+              backgroundImage: "url(/images/joel-img-2.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center top",
+              minHeight: 480,
+            }}
+          />
 
           {/* Right Column: Name, credentials, bio */}
           <div className="lg:w-1/2">
