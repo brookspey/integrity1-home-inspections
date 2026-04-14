@@ -1,18 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import { FormEvent } from "react";
 
 export default function YourReportContent() {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    window.open(
-      "https://www.homegauge.com/report/default.aspx?companyId=47338",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  }
-
   return (
     <section
       style={{
@@ -51,12 +39,13 @@ export default function YourReportContent() {
           color: "rgba(255,255,255,0.8)",
           textAlign: "center",
           marginBottom: 40,
+          padding: "0 20px",
         }}
       >
-        Login below to view your completed inspection report.
+        View your completed inspection report on our secure HomeGauge portal.
       </p>
 
-      {/* Login card */}
+      {/* Card */}
       <div
         style={{
           backgroundColor: "white",
@@ -66,7 +55,6 @@ export default function YourReportContent() {
           width: "100%",
         }}
       >
-        {/* Logo */}
         <div style={{ marginBottom: 10 }}>
           <Image
             src="/images/Logo-150x150.png"
@@ -77,7 +65,6 @@ export default function YourReportContent() {
           />
         </div>
 
-        {/* Card heading */}
         <h2
           style={{
             fontFamily: "var(--font-sans)",
@@ -90,102 +77,54 @@ export default function YourReportContent() {
             marginBottom: 20,
           }}
         >
-          LOGIN TO VIEW INSPECTION
+          VIEW YOUR INSPECTION
         </h2>
 
-        {/* Form */}
-        <form
-          onSubmit={handleSubmit}
+        <p
           style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 16,
-            textAlign: "left",
+            fontSize: 15,
+            lineHeight: "24px",
+            color: "#666",
+            marginBottom: 24,
           }}
         >
-          <div>
-            <label
-              style={{
-                display: "block",
-                fontSize: 16,
-                fontWeight: 700,
-                color: "#333",
-                marginBottom: 4,
-              }}
-            >
-              User Name
-            </label>
-            <input
-              type="text"
-              style={{
-                width: "100%",
-                padding: 8,
-                border: "1px solid #ccc",
-                fontSize: 16,
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
+          Click below to log in and access your detailed inspection report.
+        </p>
 
-          <div>
-            <label
-              style={{
-                display: "block",
-                fontSize: 16,
-                fontWeight: 700,
-                color: "#333",
-                marginBottom: 4,
-              }}
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              style={{
-                width: "100%",
-                padding: 8,
-                border: "1px solid #ccc",
-                fontSize: 16,
-                boxSizing: "border-box",
-              }}
-            />
-          </div>
+        <a
+          href="https://www.homegauge.com/report/default.aspx?companyId=47338"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            backgroundColor: "rgb(62, 100, 175)",
+            color: "white",
+            fontSize: 16,
+            fontWeight: 700,
+            letterSpacing: 2,
+            textTransform: "uppercase",
+            padding: "14px 32px",
+            borderRadius: 5,
+            textDecoration: "none",
+          }}
+        >
+          View Your Report
+        </a>
 
-          <div style={{ textAlign: "center", marginTop: 8 }}>
-            <button
-              type="submit"
-              style={{
-                backgroundColor: "rgb(62, 100, 175)",
-                color: "white",
-                fontSize: 16,
-                fontWeight: 400,
-                letterSpacing: 2,
-                textTransform: "uppercase",
-                padding: "10px 20px",
-                borderRadius: 5,
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Sign In
-            </button>
-          </div>
-
-          <div style={{ textAlign: "center", marginTop: 4 }}>
-            <a
-              href="https://www.homegauge.com/lostpassword.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "#2EA3F2",
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
-              Lost Password?
-            </a>
-          </div>
-        </form>
+        <div style={{ marginTop: 16 }}>
+          <a
+            href="https://www.homegauge.com/lostpassword.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#2EA3F2",
+              fontSize: 14,
+              textDecoration: "none",
+            }}
+          >
+            Lost Password?
+          </a>
+        </div>
       </div>
     </section>
   );
