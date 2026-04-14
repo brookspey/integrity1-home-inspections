@@ -29,6 +29,35 @@ const inspectionItems = [
   "Irrigation system and exterior grading",
 ];
 
+const faqs = [
+  {
+    q: "Why should sellers get a pre-listing inspection?",
+    a: "A pre-listing inspection gives you full knowledge of your home's condition before buyers discover issues on their own. In Palm Beach County's competitive market, this transparency builds trust with buyers and often results in faster sales at stronger prices. You can address problems on your own timeline rather than scrambling during negotiations.",
+  },
+  {
+    q: "How far in advance of listing should I schedule the inspection?",
+    a: "We recommend scheduling your pre-listing inspection 2 to 4 weeks before your planned listing date. This gives you enough time to address any findings and obtain repair estimates if needed. Many sellers in West Palm Beach and Boca Raton use this window to complete minor repairs that could otherwise become negotiation points.",
+  },
+  {
+    q: "How is a pre-listing inspection different from a buyer's inspection?",
+    a: "The inspection itself follows the same InterNACHI Standards of Practice and covers the same systems and components. The key difference is timing and purpose. As the seller, you receive the report first and can proactively fix issues, set a realistic asking price, or disclose known conditions to buyers in Delray Beach and surrounding areas.",
+  },
+  {
+    q: "What are the benefits of a pre-listing inspection in Florida?",
+    a: "Florida law requires sellers to disclose known material defects. A pre-listing inspection fulfills this obligation with professional documentation. It also reduces the chance of deal-killing surprises during the buyer's inspection, speeds up the closing process, and demonstrates honesty to buyers throughout Palm Beach County.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -55,6 +84,10 @@ export default function PreListingInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -333,6 +366,25 @@ export default function PreListingInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

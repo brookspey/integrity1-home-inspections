@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,6 +19,21 @@ const REQUEST_INSPECTION_URL =
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(href + "/");
+  };
 
   return (
     <header
@@ -26,6 +42,10 @@ export function Header() {
         background:
           "linear-gradient(90deg, rgb(219, 215, 168), rgb(172, 164, 127))",
         zIndex: 50,
+        position: "sticky",
+        top: 0,
+        boxShadow: scrolled ? "0 2px 10px rgba(0,0,0,0.1)" : "none",
+        transition: "box-shadow 0.3s ease",
       }}
     >
       {/* Gold gradient shows as thin decorative strip via padding */}
@@ -65,6 +85,9 @@ export function Header() {
                       letterSpacing: 2,
                       textTransform: "uppercase",
                       transition: "opacity 0.2s ease-in-out",
+                      ...(isActive(link.href)
+                        ? { borderBottom: "2px solid #2EA3F2", paddingBottom: 4 }
+                        : {}),
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.opacity = "0.7";
@@ -198,8 +221,8 @@ export function Header() {
                       display: "block",
                       fontFamily: "'Open Sans', sans-serif",
                       fontSize: 15,
-                      fontWeight: 400,
-                      color: "rgb(38, 53, 86)",
+                      fontWeight: isActive(link.href) ? 700 : 400,
+                      color: isActive(link.href) ? "#2EA3F2" : "rgb(38, 53, 86)",
                       letterSpacing: 2,
                       textTransform: "uppercase",
                       padding: "12px 0",

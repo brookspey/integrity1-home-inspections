@@ -29,6 +29,35 @@ const inspectionItems = [
   "Photographic documentation of all four systems",
 ];
 
+const faqs = [
+  {
+    q: "What does a 4-point inspection cover?",
+    a: "A 4-point inspection focuses on four critical systems: the roof, electrical, plumbing, and HVAC. The inspector documents the age, type, and condition of each system, identifies materials like polybutylene plumbing or recalled electrical panels, and provides photographic evidence that your Florida insurance carrier requires for underwriting.",
+  },
+  {
+    q: "Is a 4-point inspection required for homeowners insurance in Florida?",
+    a: "Most Florida insurance companies require a 4-point inspection for homes that are 15 years old or older when issuing or renewing a homeowners policy. Some carriers in Palm Beach County require it for newer homes as well. Without this inspection, your insurer may decline to offer or renew coverage on your property.",
+  },
+  {
+    q: "How often do I need a 4-point inspection?",
+    a: "Insurance companies typically require a new 4-point inspection every time you apply for a new policy or switch carriers. Some insurers in West Palm Beach and Boca Raton accept reports that are less than 5 years old, but many require a current inspection. Check with your insurance agent for their specific requirements.",
+  },
+  {
+    q: "How long does a 4-point inspection take and what does it cost?",
+    a: "A 4-point inspection typically takes about 30 to 45 minutes on-site and is one of our most affordable services. Many homeowners in Jupiter and Delray Beach combine it with a wind mitigation inspection to save time and potentially reduce insurance costs. Call (561) 565-8513 for current pricing.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -55,6 +84,10 @@ export default function FourPointInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -336,6 +369,25 @@ export default function FourPointInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

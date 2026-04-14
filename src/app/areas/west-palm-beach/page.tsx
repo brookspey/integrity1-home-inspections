@@ -66,6 +66,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in West Palm Beach do you serve?",
+    a: "We serve all of West Palm Beach including Downtown, Northwood, Flamingo Park, El Cid, Grandview Heights, Palm Beach Lakes, and the surrounding neighborhoods. Whether you are buying a historic home near Clematis Street or a newer property in the western communities, we provide thorough inspection coverage.",
+  },
+  {
+    q: "How much does a home inspection cost in West Palm Beach?",
+    a: "Home inspection costs in West Palm Beach typically range from $350 to $550 depending on property size, age, and the type of inspection. We also offer bundled pricing when you combine services like a 4-point and wind mitigation inspection. Call (561) 565-8513 for an exact quote for your West Palm Beach property.",
+  },
+  {
+    q: "Do you offer wind mitigation inspections in West Palm Beach?",
+    a: "Yes, we offer wind mitigation inspections throughout West Palm Beach and all of Palm Beach County. Many West Palm Beach homeowners save hundreds to thousands of dollars annually on insurance premiums after we document their home's hurricane-resistant features on the official OIR-B1-1802 form.",
+  },
+  {
+    q: "How do I schedule an inspection in West Palm Beach?",
+    a: "Schedule your West Palm Beach home inspection by calling or texting (561) 565-8513, or book online through our HomeGauge scheduling portal. We offer flexible availability to work around your real estate closing timeline and can often accommodate next-day appointments in the West Palm Beach area.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function WestPalmBeachPage() {
   return (
     <>
@@ -94,6 +123,10 @@ export default function WestPalmBeachPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -307,6 +340,25 @@ export default function WestPalmBeachPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

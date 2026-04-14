@@ -66,6 +66,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Delray Beach do you serve?",
+    a: "We serve all of Delray Beach including the downtown Atlantic Avenue corridor, Lake Ida, Tropic Isle, Delray Beach Shores, Barwick Estates, and the western communities along Lyons Road. From oceanfront condos to single-family homes in established neighborhoods, we inspect properties throughout Delray Beach.",
+  },
+  {
+    q: "How much does a home inspection cost in Delray Beach?",
+    a: "Home inspection pricing in Delray Beach ranges from $350 to $550 depending on property size, age, and inspection type. Coastal properties and older homes near downtown may have additional considerations. Call (561) 565-8513 for an exact quote tailored to your Delray Beach property.",
+  },
+  {
+    q: "Do you offer pre-listing inspections in Delray Beach?",
+    a: "Yes, we offer pre-listing inspections for Delray Beach sellers who want to understand their home's condition before going to market. This proactive approach is especially popular in Delray Beach's competitive real estate market, helping sellers avoid surprises and negotiate from a position of strength.",
+  },
+  {
+    q: "How do I schedule an inspection in Delray Beach?",
+    a: "Schedule your Delray Beach home inspection by calling or texting (561) 565-8513, or book online through our HomeGauge scheduling portal. We provide flexible scheduling and fast turnaround on reports to meet your closing deadlines in the Delray Beach real estate market.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function DelrayBeachPage() {
   return (
     <>
@@ -88,6 +117,10 @@ export default function DelrayBeachPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -301,6 +334,25 @@ export default function DelrayBeachPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

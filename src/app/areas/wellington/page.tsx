@@ -66,6 +66,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Wellington do you serve?",
+    a: "We serve all of Wellington including Olympia, The Isles, Wellington View, Greenview Shores, Sugar Pond Manor, and the equestrian estate areas along South Shore Boulevard. From family homes in established subdivisions to larger properties near the Wellington International equestrian facilities, we cover it all.",
+  },
+  {
+    q: "How much does a home inspection cost in Wellington?",
+    a: "Home inspection costs in Wellington range from $350 to $550 depending on property size and age. Larger properties in Wellington's equestrian communities may be quoted individually. Contact us at (561) 565-8513 for pricing specific to your Wellington home and the services you need.",
+  },
+  {
+    q: "Do you offer builder's warranty inspections in Wellington?",
+    a: "Yes, we offer 11-month builder's warranty inspections in Wellington, which is especially relevant given the ongoing new construction in western Wellington communities. We help new homeowners catch construction defects before their 12-month builder warranty expires, saving potentially thousands in out-of-pocket repairs.",
+  },
+  {
+    q: "How do I schedule an inspection in Wellington?",
+    a: "Schedule your Wellington home inspection by calling or texting (561) 565-8513, or book online through our HomeGauge scheduling portal. We offer convenient scheduling throughout Wellington and western Palm Beach County with reports typically delivered within 24 hours of the inspection.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function WellingtonPage() {
   return (
     <>
@@ -88,6 +117,10 @@ export default function WellingtonPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -305,6 +338,25 @@ export default function WellingtonPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 
