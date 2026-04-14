@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata = {
@@ -25,11 +26,13 @@ const services = [
   [
     {
       title: "Buyer\u2019s Inspections",
+      slug: "buyers-inspection",
       description:
         "Having a complete report about the true condition of your prospective home is a great asset in the decision-making process of buying a home. With a Buyer\u2019s Inspection, we will perform a comprehensive visual inspection of the property and report the findings of anything in disrepair, and possible issues that could be unsafe or problematic in the future.",
     },
     {
       title: "Pre-listing / Sellers Inspection",
+      slug: "pre-listing-inspection",
       description:
         "Much like a Buyers Inspection, we will complete a thorough walkthrough and investigative inspection of the home\u2019s components and structures in search of any issues. This way you can fully know the true condition of the home before listing it for sale.",
     },
@@ -37,11 +40,13 @@ const services = [
   [
     {
       title: "11-Month / Builders Warranty Inspection",
+      slug: "builders-warranty-inspection",
       description:
         "Most contractors provide a 12-month warranty after construction is complete. This inspection service will uncover any possible issues before the warranty expires. Make sure you don\u2019t end up paying out of pocket for something your warranty would\u2019ve covered!",
     },
     {
       title: "Home Maintenance Inspection",
+      slug: "home-maintenance-inspection",
       description:
         "This service is recommended for current homeowners that wish to maintain the condition and value of their home. We will provide you with a comprehensive report providing you with all the information you need about your home\u2019s condition, needed repairs, or potential problems in the future to get in front of any possible problems before they turn into expensive repairs.",
     },
@@ -49,11 +54,13 @@ const services = [
   [
     {
       title: "Commercial Buildings / Property Inspection",
+      slug: "commercial-inspection",
       description:
         "This inspection is suited for heavy and light commercial buildings and properties. The inspection provides commercial operators with a thorough report on the condition of their potential or current properties and facilities. This is a very sound investment to make during your commercial endeavors.",
     },
     {
       title: "4-Point Inspection",
+      slug: "4-point-inspection",
       description:
         "A 4-Point Inspection examines roof, electrical, plumbing, and HVAC. It will determine liability and potential problems for insurance purposes.",
     },
@@ -61,11 +68,13 @@ const services = [
   [
     {
       title: "Wind Mitigation",
+      slug: "wind-mitigation",
       description:
         "The inspector will look for faults or defects in the features and that helps to reduce the amount of damage caused by wind during a hurricane or other strong storm.",
     },
     {
       title: "Visual Pool Inspection",
+      slug: "pool-inspection",
       description:
         "Pool Inspections are performed to make certain your pool is meeting state regulations and industry standards. A certified inspector will provide a detailed report about the safety of your pool.",
     },
@@ -83,6 +92,13 @@ const whatWeInspect = [
 export default function ServicesPage() {
   return (
     <>
+      <style>{`
+        .service-title-link { color: white; text-decoration: none; }
+        .service-title-link:hover { text-decoration: underline; }
+        .learn-more-link { color: #2EA3F2; text-decoration: none; font-size: 14px; }
+        .learn-more-link:hover { text-decoration: underline; }
+      `}</style>
+
       {/* ── Section 1: Hero — "Inspection Services" heading + house image + standards text ── */}
       <section
         className="relative overflow-hidden"
@@ -232,17 +248,29 @@ export default function ServicesPage() {
                       marginBottom: 10,
                     }}
                   >
-                    {service.title}
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="service-title-link"
+                    >
+                      {service.title}
+                    </Link>
                   </h2>
                   <p
                     style={{
                       fontSize: 16,
                       lineHeight: "27px",
                       color: "rgb(237, 236, 236)",
+                      marginBottom: 8,
                     }}
                   >
                     {service.description}
                   </p>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="learn-more-link"
+                  >
+                    Learn More &rarr;
+                  </Link>
                 </div>
               ))}
             </div>
