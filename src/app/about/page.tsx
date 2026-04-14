@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About Joel Donoghue | Certified Home Inspector | Palm Beach County",
   description:
-    "Meet Joel Donoghue, InterNACHI Certified Professional Inspector (FL License HI13212). Serving Palm Beach County with integrity-first home inspections. E&O and General Liability insured.",
+    "Meet Joel Donoghue, InterNACHI Certified Professional Inspector (FL License HI13212). Serving Palm Beach County with integrity-first inspections.",
+  openGraph: {
+    title: "About Joel Donoghue | Certified Home Inspector | Palm Beach County",
+    description:
+      "Meet Joel Donoghue, InterNACHI Certified Professional Inspector (FL License HI13212). Serving Palm Beach County with integrity-first inspections.",
+    url: "https://integrity1-home-inspections.vercel.app/about",
+  },
 };
 
 export default function AboutPage() {

@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Visual Pool Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "Visual Pool Inspection in Palm Beach County",
   description:
     "Visual pool inspection in West Palm Beach, Boca Raton & Palm Beach County. Ensure your pool meets Florida safety standards. Call (561) 565-8513.",
+  openGraph: {
+    title: "Visual Pool Inspection in Palm Beach County",
+    description:
+      "Visual pool inspection in West Palm Beach, Boca Raton & Palm Beach County. Ensure your pool meets Florida safety standards.",
+    url: "https://integrity1-home-inspections.vercel.app/services/pool-inspection",
+  },
 };
 
 const inspectionItems = [

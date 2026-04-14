@@ -3,10 +3,15 @@ import Link from "next/link";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Home Inspector in Lake Worth Beach, FL | Integrity1 Home Inspections",
+  title: "Home Inspector in Lake Worth Beach, FL",
   description:
-    "Professional home inspection services in Lake Worth Beach, FL. 4-point, wind mitigation, buyer's & pre-listing inspections. 5-star rated, InterNACHI certified. Call (561) 565-8513.",
+    "Professional home inspection services in Lake Worth Beach, FL. 4-point, wind mitigation, buyer's & pre-listing inspections. InterNACHI certified.",
+  openGraph: {
+    title: "Home Inspector in Lake Worth Beach, FL",
+    description:
+      "Professional home inspection services in Lake Worth Beach, FL. 4-point, wind mitigation, buyer's & pre-listing inspections. InterNACHI certified.",
+    url: "https://integrity1-home-inspections.vercel.app/areas/lake-worth",
+  },
 };
 
 const services = [

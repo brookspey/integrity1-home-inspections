@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Integrity1 Home Inspections",
+  title: "Privacy Policy",
   description:
-    "Privacy policy for Integrity1 Home Inspections website.",
+    "Privacy policy for the Integrity1 Home Inspections website. Learn how we collect, use, and protect your personal information.",
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "Privacy policy for the Integrity1 Home Inspections website. Learn how we collect, use, and protect your personal information.",
+    url: "https://integrity1-home-inspections.vercel.app/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

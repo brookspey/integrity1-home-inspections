@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Buyer's Home Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "Buyer's Home Inspection in Palm Beach County",
   description:
-    "Comprehensive buyer's home inspection in West Palm Beach, Boca Raton & Jupiter. Detailed reports covering all major systems. Call (561) 565-8513 to schedule.",
+    "Comprehensive buyer's home inspection in West Palm Beach, Boca Raton & Jupiter. Detailed reports covering all major systems. Call (561) 565-8513.",
+  openGraph: {
+    title: "Buyer's Home Inspection in Palm Beach County",
+    description:
+      "Comprehensive buyer's home inspection in West Palm Beach, Boca Raton & Jupiter. Detailed reports covering all major systems.",
+    url: "https://integrity1-home-inspections.vercel.app/services/buyers-inspection",
+  },
 };
 
 const inspectionItems = [

@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "4-Point Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "4-Point Inspection in Palm Beach County",
   description:
     "Professional 4-point inspection covering roof, electrical, plumbing & HVAC in Palm Beach County. Required for homeowners insurance. Call (561) 565-8513.",
+  openGraph: {
+    title: "4-Point Inspection in Palm Beach County",
+    description:
+      "Professional 4-point inspection covering roof, electrical, plumbing & HVAC in Palm Beach County. Required for homeowners insurance.",
+    url: "https://integrity1-home-inspections.vercel.app/services/4-point-inspection",
+  },
 };
 
 const inspectionItems = [

@@ -18,8 +18,12 @@ const libreFranklin = Libre_Franklin({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Integrity1 Home Inspections | Palm Beach County Home Inspector | (561) 565-8513",
+  metadataBase: new URL("https://integrity1-home-inspections.vercel.app"),
+  title: {
+    default:
+      "Integrity1 Home Inspections | Palm Beach County Home Inspector | (561) 565-8513",
+    template: "%s | Integrity1 Home Inspections",
+  },
   description:
     "Certified home inspector serving Palm Beach County, Boca Raton, West Palm Beach, Jupiter & Delray Beach. 4-point, wind mitigation, pre-listing & commercial inspections. 5-star rated. Call (561) 565-8513.",
   icons: {
@@ -29,16 +33,21 @@ export const metadata: Metadata = {
     ],
     apple: "/seo/apple-touch-icon.png",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Integrity1 Home Inspections",
+    locale: "en_US",
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["HomeInspector", "LocalBusiness"],
   name: "Integrity1 Home Inspections LLC",
-  url: "https://integrity1homeinspections.com",
+  url: "https://integrity1-home-inspections.vercel.app",
   telephone: "(561) 565-8513",
   email: "integrity1homeinspections@gmail.com",
-  image: "https://integrity1homeinspections.com/images/Logo.png",
+  image: "https://integrity1-home-inspections.vercel.app/images/Logo.png",
   description:
     "Certified home inspector serving Palm Beach County, FL. Offering home inspections, 4-point inspections, wind mitigation, pre-listing, commercial, pool, and builder's warranty inspections in West Palm Beach, Boca Raton, Jupiter, Delray Beach, Boynton Beach & Wellington.",
   priceRange: "$$",
@@ -92,7 +101,6 @@ const jsonLd = {
       },
     ],
   },
-  sameAs: [],
 };
 
 export default function RootLayout({

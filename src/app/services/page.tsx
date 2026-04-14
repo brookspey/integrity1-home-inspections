@@ -1,11 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
-export const metadata = {
-  title:
-    "Home Inspection Services | 4-Point, Wind Mitigation & More | Palm Beach County",
+export const metadata: Metadata = {
+  title: "Home Inspection Services | 4-Point, Wind Mitigation & More | Palm Beach County",
   description:
-    "Comprehensive home inspection services in Palm Beach County: buyer's inspections, 4-point, wind mitigation, commercial, pool, pre-listing & builder's warranty. Military & first-time buyer discounts.",
+    "Home inspection services in Palm Beach County: buyer's, 4-point, wind mitigation, commercial, pool, pre-listing & builder's warranty inspections.",
+  openGraph: {
+    title: "Home Inspection Services | 4-Point, Wind Mitigation & More | Palm Beach County",
+    description:
+      "Home inspection services in Palm Beach County: buyer's, 4-point, wind mitigation, commercial, pool, pre-listing & builder's warranty inspections.",
+    url: "https://integrity1-home-inspections.vercel.app/services",
+  },
 };
 
 const inspectItems = [
