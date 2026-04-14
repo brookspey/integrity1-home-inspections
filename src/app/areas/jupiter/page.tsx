@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Home Inspector in Jupiter, FL | Integrity1 Home Inspections",
@@ -121,6 +122,12 @@ export default function JupiterPage() {
           </p>
         </div>
       </section>
+
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Service Areas", href: "/areas" },
+        { label: "Jupiter" },
+      ]} />
 
       {/* Main Content */}
       <section style={{ backgroundColor: "white", padding: "54px 0" }}>

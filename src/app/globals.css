@@ -94,3 +94,10 @@ p {
   width: 100%;
   height: auto;
 }
+
+/* Bottom padding for sticky mobile CTA */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 60px;
+  }
+}

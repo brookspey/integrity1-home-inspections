@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title:
@@ -91,6 +92,12 @@ export default function PreListingInspectionPage() {
           </p>
         </div>
       </section>
+
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Pre-Listing / Seller's Inspection" },
+      ]} />
 
       {/* Main Content */}
       <section style={{ backgroundColor: "white", padding: "54px 0" }}>

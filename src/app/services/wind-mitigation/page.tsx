@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title:
@@ -89,6 +90,12 @@ export default function WindMitigationPage() {
           </p>
         </div>
       </section>
+
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services" },
+        { label: "Wind Mitigation Inspection" },
+      ]} />
 
       {/* Main Content */}
       <section style={{ backgroundColor: "white", padding: "54px 0" }}>
