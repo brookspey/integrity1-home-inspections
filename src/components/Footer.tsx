@@ -138,16 +138,7 @@ export function Footer() {
             <Link href="/" className="footer-bottom-link">
               Integrity1 Home Inspections
             </Link>
-            {" | Designed By "}
-            <a
-              href="https://www.homegauge.com/"
-              className="footer-bottom-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              HomeGauge
-            </a>
-            {" Web Services | "}
+            {" | "}
             <Link href="/privacy-policy" className="footer-bottom-link">
               PRIVACY POLICY
             </Link>
