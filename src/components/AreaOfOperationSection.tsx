@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export function AreaOfOperationSection() {
   return (
@@ -58,11 +59,29 @@ export function AreaOfOperationSection() {
               fontSize: 16,
               lineHeight: "27px",
               color: "white",
-              marginBottom: 30,
+              marginBottom: 16,
             }}
           >
             Integrity1 Home Inspections is insured with Errors &amp;
             Omissions/General Liability for your protection.
+          </p>
+
+          <p
+            style={{
+              fontSize: 16,
+              lineHeight: "27px",
+              color: "white",
+              marginBottom: 30,
+            }}
+          >
+            We serve{" "}
+            <Link href="/areas/west-palm-beach" style={{ color: "#2EA3F2", textDecoration: "underline" }}>West Palm Beach</Link>,{" "}
+            <Link href="/areas/boca-raton" style={{ color: "#2EA3F2", textDecoration: "underline" }}>Boca Raton</Link>,{" "}
+            <Link href="/areas/jupiter" style={{ color: "#2EA3F2", textDecoration: "underline" }}>Jupiter</Link>,{" "}
+            <Link href="/areas/delray-beach" style={{ color: "#2EA3F2", textDecoration: "underline" }}>Delray Beach</Link>,{" "}
+            <Link href="/areas/boynton-beach" style={{ color: "#2EA3F2", textDecoration: "underline" }}>Boynton Beach</Link>,{" "}
+            <Link href="/areas/wellington" style={{ color: "#2EA3F2", textDecoration: "underline" }}>Wellington</Link>,
+            and the surrounding communities.
           </p>
 
           {/* Contact Links */}

@@ -12,49 +12,49 @@ export const metadata: Metadata = {
 const services = [
   {
     title: "Buyer's Inspection",
-    slug: "/services",
+    slug: "/services/buyers-inspection",
     description:
       "A comprehensive visual inspection of your prospective home, reporting anything in disrepair or potentially problematic for the future.",
   },
   {
     title: "Pre-Listing / Seller's Inspection",
-    slug: "/services",
+    slug: "/services/pre-listing-inspection",
     description:
       "Know the true condition of your home before listing it for sale. Avoid surprises during the buyer's inspection process.",
   },
   {
     title: "4-Point Inspection",
-    slug: "/services",
+    slug: "/services/4-point-inspection",
     description:
       "Examines roof, electrical, plumbing, and HVAC systems to determine liability and potential problems for insurance purposes.",
   },
   {
     title: "Wind Mitigation",
-    slug: "/services",
+    slug: "/services/wind-mitigation",
     description:
       "Evaluates features that reduce wind damage during hurricanes and storms, which can qualify you for insurance discounts.",
   },
   {
     title: "11-Month Builder's Warranty",
-    slug: "/services",
+    slug: "/services/builders-warranty-inspection",
     description:
       "Uncover any issues in your new construction before the builder's 12-month warranty expires.",
   },
   {
     title: "Commercial Property Inspection",
-    slug: "/services",
+    slug: "/services/commercial-inspection",
     description:
       "Thorough inspection of light and heavy commercial buildings, providing operators with detailed condition reports.",
   },
   {
     title: "Pool Inspection",
-    slug: "/services",
+    slug: "/services/pool-inspection",
     description:
       "Ensures your pool meets Florida state regulations and industry safety standards with a detailed report.",
   },
   {
     title: "Home Maintenance Inspection",
-    slug: "/services",
+    slug: "/services/home-maintenance-inspection",
     description:
       "For current homeowners who want to maintain their home's condition and value by catching problems early.",
   },
