@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Integrity1 Home Inspections",
+  description:
+    "Privacy policy for Integrity1 Home Inspections website.",
 };
 
 export default function PrivacyPolicyPage() {

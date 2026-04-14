@@ -1,5 +1,8 @@
 export const metadata = {
-  title: "Reviews | Integrity1 Home Inspections",
+  title:
+    "Reviews & Testimonials | 5-Star Home Inspector | Palm Beach County",
+  description:
+    "Read reviews from satisfied clients of Integrity1 Home Inspections. Perfect 5.0-star rating across all Google reviews. Trusted home inspector in Palm Beach County, FL.",
 };
 
 const testimonials = [

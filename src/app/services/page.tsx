@@ -1,9 +1,10 @@
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata = {
-  title: "Services | Integrity1 Home Inspections",
+  title:
+    "Home Inspection Services | 4-Point, Wind Mitigation & More | Palm Beach County",
   description:
-    "Integrity1 Home Inspections services: buyer's inspections, pre-listing, wind mitigation, 4-point, pool inspections and more in Palm Beach County.",
+    "Comprehensive home inspection services in Palm Beach County: buyer's inspections, 4-point, wind mitigation, commercial, pool, pre-listing & builder's warranty. Military & first-time buyer discounts.",
 };
 
 const inspectItems = [
