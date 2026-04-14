@@ -6,6 +6,11 @@ import { FormEvent } from "react";
 export default function YourReportContent() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    window.open(
+      "https://www.homegauge.com/report/default.aspx?companyId=47338",
+      "_blank",
+      "noopener,noreferrer"
+    );
   }
 
   return (
