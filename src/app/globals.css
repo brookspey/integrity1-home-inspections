@@ -95,9 +95,38 @@ p {
   height: auto;
 }
 
+/* FAQ accordion styling */
+details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+details summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 700;
+  color: #3E64AF;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+/* Form input focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #2EA3F2;
+  outline-offset: 1px;
+}
+
 /* Bottom padding for sticky mobile CTA */
 @media (max-width: 1023px) {
   body {
-    padding-bottom: 60px;
+    padding-bottom: 72px;
   }
 }

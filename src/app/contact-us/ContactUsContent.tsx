@@ -83,9 +83,31 @@ export default function ContactUsContent() {
             display: "flex",
             flexDirection: "column",
             gap: 16,
-            justifyContent: "center",
+            alignSelf: "flex-start",
+            paddingTop: 20,
           }}
         >
+          <h2
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontSize: 32,
+              fontWeight: 900,
+              color: "white",
+              margin: 0,
+            }}
+          >
+            Get In Touch
+          </h2>
+          <p
+            style={{
+              fontSize: 16,
+              color: "white",
+              margin: 0,
+              marginBottom: 24,
+            }}
+          >
+            Reach out today and we&apos;ll get back to you as soon as possible.
+          </p>
           <ContactLink
             href="tel:1-561-565-8513"
             icon="/images/conicon3.png"
@@ -302,10 +324,10 @@ function ContactLink({
         gap: 12,
         color: "white",
         textDecoration: "none",
-        fontSize: large ? 24 : 16,
+        fontSize: large ? 28 : 16,
       }}
     >
-      <Image src={icon} alt="" width={50} height={50} />
+      <Image src={icon} alt="" width={56} height={56} />
       <span>{text}</span>
     </a>
   );

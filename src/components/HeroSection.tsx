@@ -59,7 +59,9 @@ export function HeroSection() {
             transition: "background-color 0.5s",
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
+            if (window.matchMedia("(hover: hover)").matches) {
+              (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
+            }
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "rgb(62, 100, 175)";

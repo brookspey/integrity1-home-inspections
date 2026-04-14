@@ -135,16 +135,30 @@ export default function AboutPage() {
 
       {/* ── Section 2: A Compassionate Approach (parallax banner) ── */}
       <section
+        className="about-banner-section"
         style={{
           backgroundImage: "url(/images/joelbanner2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center top",
           backgroundAttachment: "scroll",
           padding: "500px 0 80px",
+          position: "relative",
         }}
       >
-        {/* Wave divider at top */}
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+        <style>{`
+          @media (max-width: 768px) {
+            .about-banner-section { padding: 200px 0 60px !important; }
+            .about-banner-section::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.55) 100%);
+              pointer-events: none;
+            }
+            .about-banner-section h2 { font-size: 36px !important; line-height: 40px !important; }
+          }
+        `}</style>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px", position: "relative", zIndex: 1 }}>
           <h2
             className="font-heading"
             style={{
