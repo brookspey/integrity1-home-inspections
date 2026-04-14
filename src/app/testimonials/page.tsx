@@ -1,8 +1,15 @@
-export const metadata = {
-  title:
-    "Reviews & Testimonials | 5-Star Home Inspector | Palm Beach County",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Reviews & Testimonials | 5-Star Home Inspector | Palm Beach County",
   description:
-    "Read reviews from satisfied clients of Integrity1 Home Inspections. Perfect 5.0-star rating across all Google reviews. Trusted home inspector in Palm Beach County, FL.",
+    "Read reviews from satisfied clients. Perfect 5.0-star rating across all Google reviews. Trusted home inspector in Palm Beach County, FL.",
+  openGraph: {
+    title: "Reviews & Testimonials | 5-Star Home Inspector | Palm Beach County",
+    description:
+      "Read reviews from satisfied clients. Perfect 5.0-star rating across all Google reviews. Trusted home inspector in Palm Beach County, FL.",
+    url: "https://integrity1-home-inspections.vercel.app/testimonials",
+  },
 };
 
 const testimonials = [

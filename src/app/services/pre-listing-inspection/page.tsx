@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Pre-Listing Seller's Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "Pre-Listing Seller's Inspection in Palm Beach County",
   description:
-    "Pre-listing home inspection for sellers in West Palm Beach, Boca Raton & Palm Beach County. Know your home's true condition before listing. Call (561) 565-8513.",
+    "Pre-listing home inspection for sellers in West Palm Beach, Boca Raton & Palm Beach County. Know your home's true condition before listing.",
+  openGraph: {
+    title: "Pre-Listing Seller's Inspection in Palm Beach County",
+    description:
+      "Pre-listing home inspection for sellers in West Palm Beach, Boca Raton & Palm Beach County. Know your home's true condition before listing.",
+    url: "https://integrity1-home-inspections.vercel.app/services/pre-listing-inspection",
+  },
 };
 
 const inspectionItems = [

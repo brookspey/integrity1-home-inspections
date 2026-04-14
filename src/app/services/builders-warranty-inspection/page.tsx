@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "11-Month Builder's Warranty Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "11-Month Builder's Warranty Inspection in Palm Beach County",
   description:
     "Builder's warranty inspection before your 12-month warranty expires. Catch defects in new construction in Palm Beach County. Call (561) 565-8513.",
+  openGraph: {
+    title: "11-Month Builder's Warranty Inspection in Palm Beach County",
+    description:
+      "Builder's warranty inspection before your 12-month warranty expires. Catch defects in new construction in Palm Beach County.",
+    url: "https://integrity1-home-inspections.vercel.app/services/builders-warranty-inspection",
+  },
 };
 
 const inspectionItems = [

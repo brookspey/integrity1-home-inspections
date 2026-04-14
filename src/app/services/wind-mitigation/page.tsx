@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Wind Mitigation Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "Wind Mitigation Inspection in Palm Beach County",
   description:
     "Wind mitigation inspection in Palm Beach County. Save on homeowners insurance with documented hurricane-resistant features. Call (561) 565-8513.",
+  openGraph: {
+    title: "Wind Mitigation Inspection in Palm Beach County",
+    description:
+      "Wind mitigation inspection in Palm Beach County. Save on homeowners insurance with documented hurricane-resistant features.",
+    url: "https://integrity1-home-inspections.vercel.app/services/wind-mitigation",
+  },
 };
 
 const inspectionItems = [

@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Commercial Property Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "Commercial Property Inspection in Palm Beach County",
   description:
-    "Commercial building inspection for offices, retail, warehouses & industrial properties in Palm Beach County. Protect your investment. Call (561) 565-8513.",
+    "Commercial building inspection for offices, retail, warehouses & industrial properties in Palm Beach County. Protect your investment.",
+  openGraph: {
+    title: "Commercial Property Inspection in Palm Beach County",
+    description:
+      "Commercial building inspection for offices, retail, warehouses & industrial properties in Palm Beach County. Protect your investment.",
+    url: "https://integrity1-home-inspections.vercel.app/services/commercial-inspection",
+  },
 };
 
 const inspectionItems = [

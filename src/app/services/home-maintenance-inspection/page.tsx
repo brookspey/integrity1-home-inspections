@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
 
 export const metadata: Metadata = {
-  title:
-    "Home Maintenance Inspection in Palm Beach County | Integrity1 Home Inspections",
+  title: "Home Maintenance Inspection in Palm Beach County",
   description:
-    "Annual home maintenance inspection in Palm Beach County. Catch small problems before they become expensive repairs. Call (561) 565-8513 to schedule.",
+    "Annual home maintenance inspection in Palm Beach County. Catch small problems before they become expensive repairs. Call (561) 565-8513.",
+  openGraph: {
+    title: "Home Maintenance Inspection in Palm Beach County",
+    description:
+      "Annual home maintenance inspection in Palm Beach County. Catch small problems before they become expensive repairs.",
+    url: "https://integrity1-home-inspections.vercel.app/services/home-maintenance-inspection",
+  },
 };
 
 const inspectionItems = [
