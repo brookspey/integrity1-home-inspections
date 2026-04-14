@@ -26,6 +26,35 @@ const inspectionItems = [
   "Screen enclosure, lanai, and patio structural condition",
 ];
 
+const faqs = [
+  {
+    q: "How often should I schedule a home maintenance inspection?",
+    a: "We recommend an annual home maintenance inspection for properties in Palm Beach County. Florida's intense heat, humidity, UV exposure, and hurricane seasons accelerate wear on building systems faster than most other climates. An annual inspection in West Palm Beach or Boca Raton catches deterioration early when repairs are affordable.",
+  },
+  {
+    q: "What does a home maintenance inspection cover?",
+    a: "The inspection covers all major systems and components including the roof, gutters, exterior caulking, windows, HVAC, water heater, plumbing, electrical, smoke detectors, attic insulation, moisture intrusion signs, appliances, grading, irrigation, and screen enclosures. You receive a prioritized report that serves as your maintenance roadmap.",
+  },
+  {
+    q: "What are the benefits of a maintenance inspection versus waiting for problems?",
+    a: "Catching a small roof leak or HVAC issue early can save thousands of dollars compared to emergency repairs. In Palm Beach County's climate, moisture intrusion left unchecked leads to mold and structural damage quickly. A maintenance inspection also helps you budget for upcoming replacements like an aging water heater or AC system.",
+  },
+  {
+    q: "How does a maintenance inspection help preserve my home's value?",
+    a: "Regular inspections document your home's condition over time and ensure all systems stay in good working order. When you decide to sell in Jupiter, Delray Beach, or Wellington, having a history of professional maintenance inspections demonstrates responsible ownership and can support a higher asking price during negotiations.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -52,6 +81,10 @@ export default function HomeMaintenanceInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -331,6 +364,25 @@ export default function HomeMaintenanceInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

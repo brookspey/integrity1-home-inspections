@@ -25,6 +25,35 @@ const inspectionItems = [
   "Visible plumbing connections and evidence of leaks",
 ];
 
+const faqs = [
+  {
+    q: "What does a pool inspection check?",
+    a: "Our visual pool inspection covers the pool shell, deck, coping, tile, skimmers, return jets, pump, filter, heater, safety barriers, screen enclosure, electrical bonding, lighting, and visible plumbing connections. We document the condition and estimated age of all major equipment for homebuyers and current owners throughout Palm Beach County.",
+  },
+  {
+    q: "What are Florida's pool safety requirements?",
+    a: "Florida's Residential Swimming Pool Safety Act requires specific barrier heights of at least 4 feet, self-closing and self-latching gates, and door alarms or approved safety covers for pools accessible from the home. During inspections in West Palm Beach, Boca Raton, and Jupiter, we verify compliance with these state-mandated safety standards.",
+  },
+  {
+    q: "How long does a pool inspection take?",
+    a: "A visual pool inspection typically takes 30 to 45 minutes when performed alongside a home inspection, or about 1 hour as a standalone service. The timeline depends on the pool's size, equipment complexity, and whether there is a spa or additional water features at your Palm Beach County property.",
+  },
+  {
+    q: "What are common pool issues found during inspections in South Florida?",
+    a: "Common findings in Palm Beach County include deteriorated pool surfaces needing resurfacing, corroded equipment from salt air exposure near Delray Beach and Boynton Beach, failed safety barrier latches, cracked pool decks, aging pumps and filters, and improper electrical bonding around the pool area.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -51,6 +80,10 @@ export default function PoolInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -331,6 +364,25 @@ export default function PoolInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

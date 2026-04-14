@@ -23,6 +23,35 @@ const inspectionItems = [
   "Grading and drainage around the property",
 ];
 
+const faqs = [
+  {
+    q: "How much does a buyer's home inspection cost in Palm Beach County?",
+    a: "The cost of a buyer's home inspection in Palm Beach County typically ranges from $350 to $500 depending on the size and age of the property. Larger homes in areas like Boca Raton or Jupiter may be on the higher end. Contact us at (561) 565-8513 for an exact quote based on your property.",
+  },
+  {
+    q: "What does a buyer's home inspection include?",
+    a: "Our buyer's inspection covers all major systems and components including the roof, foundation, electrical, plumbing, HVAC, windows, doors, attic, and garage. We inspect over 400 items following InterNACHI Standards of Practice. You receive a detailed HomeGauge report with photos and descriptions of every finding.",
+  },
+  {
+    q: "How long does a buyer's home inspection take in South Florida?",
+    a: "A typical buyer's home inspection for a single-family home in West Palm Beach or Delray Beach takes approximately 2 to 3 hours on-site. Larger properties or homes with pools and additional structures may take longer. Your digital report is usually delivered within 24 hours of the inspection.",
+  },
+  {
+    q: "What happens if the inspection finds major issues?",
+    a: "If we discover significant defects during your inspection in Palm Beach County, you can use the detailed report to negotiate repairs or price adjustments with the seller. Your real estate agent can guide you through the negotiation process. We document every finding with photos so all parties have a clear understanding of the issues.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -49,6 +78,10 @@ export default function BuyersInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -321,6 +354,25 @@ export default function BuyersInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

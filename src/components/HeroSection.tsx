@@ -29,7 +29,7 @@ export function HeroSection() {
           Integrity1 Home Inspections
         </h1>
 
-        <h3
+        <p
           className="text-white"
           style={{
             fontFamily: "var(--font-sans), 'Open Sans', sans-serif",
@@ -38,10 +38,11 @@ export function HeroSection() {
             fontWeight: 500,
             letterSpacing: 5,
             paddingBottom: 10,
+            margin: 0,
           }}
         >
           Integrity comes first!
-        </h3>
+        </p>
 
         <a
           href="https://www.homegauge.com/appointment/schedule.htmls?companyId=47338"
@@ -78,7 +79,7 @@ export function HeroSection() {
             font-size: 36px !important;
             line-height: 40px !important;
           }
-          [data-hero] h3 {
+          [data-hero] > div > p {
             font-size: 20px !important;
             line-height: 24px !important;
           }

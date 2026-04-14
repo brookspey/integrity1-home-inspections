@@ -60,6 +60,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Lake Worth Beach do you serve?",
+    a: "We serve all of Lake Worth Beach including the historic downtown district, College Park, South Palm Park, Lake Osborne Heights, and neighborhoods east along the Lake Worth Lagoon. From charming bungalows in the historic districts to newer construction in surrounding communities, we inspect properties throughout the city.",
+  },
+  {
+    q: "How much does a home inspection cost in Lake Worth Beach?",
+    a: "Home inspection pricing in Lake Worth Beach typically ranges from $325 to $500 depending on property size and age. Many of Lake Worth Beach's older homes benefit from a thorough inspection that identifies aging systems common in this area. Call (561) 565-8513 for a quote specific to your property.",
+  },
+  {
+    q: "Do you offer insurance inspections in Lake Worth Beach?",
+    a: "Yes, we offer both 4-point inspections and wind mitigation inspections in Lake Worth Beach. Many homes in the area were built before 2002 and require these insurance inspections. We complete the standard forms accepted by all Florida insurance carriers with quick turnaround for your insurance deadlines.",
+  },
+  {
+    q: "How do I schedule an inspection in Lake Worth Beach?",
+    a: "Schedule your Lake Worth Beach home inspection by calling or texting (561) 565-8513, or book online through our HomeGauge scheduling system. We serve Lake Worth Beach and all of central Palm Beach County with flexible scheduling to accommodate your real estate timeline.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function LakeWorthPage() {
   return (
     <>
@@ -82,6 +111,10 @@ export default function LakeWorthPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -296,6 +329,25 @@ export default function LakeWorthPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

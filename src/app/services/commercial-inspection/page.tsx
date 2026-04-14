@@ -23,6 +23,35 @@ const inspectionItems = [
   "Site drainage, grading, and stormwater management",
 ];
 
+const faqs = [
+  {
+    q: "What types of commercial buildings do you inspect?",
+    a: "We inspect a wide range of commercial properties in Palm Beach County including office buildings, retail storefronts, strip malls, warehouses, industrial facilities, multi-tenant complexes, and mixed-use buildings. Whether you are evaluating a property in Boca Raton's business district or a warehouse in West Palm Beach, we adapt the inspection scope to the property type.",
+  },
+  {
+    q: "How does a commercial inspection differ from a residential inspection?",
+    a: "Commercial inspections evaluate systems at a larger scale including commercial flat roofing, rooftop HVAC units, fire suppression systems, ADA compliance, parking infrastructure, and loading docks. The report also addresses deferred maintenance budgeting and capital expenditure planning, which are critical for commercial real estate decisions in Palm Beach County.",
+  },
+  {
+    q: "How long does a commercial property inspection take?",
+    a: "The timeline depends on the size and complexity of the building. A small retail space in Delray Beach may take 2 to 3 hours, while a large warehouse or multi-tenant office complex in Jupiter could require a full day. We provide a time estimate after learning about your specific property and its systems.",
+  },
+  {
+    q: "What format is the commercial inspection report?",
+    a: "You receive a comprehensive digital HomeGauge report with extensive photographic documentation, prioritized findings, and estimated remaining useful life for major systems. The report is designed for commercial stakeholders including buyers, property managers, and lenders throughout Palm Beach County to make informed decisions.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -49,6 +78,10 @@ export default function CommercialInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -326,6 +359,25 @@ export default function CommercialInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

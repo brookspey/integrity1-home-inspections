@@ -25,6 +25,35 @@ const inspectionItems = [
   "Tile and flooring installation defects",
 ];
 
+const faqs = [
+  {
+    q: "When should I schedule my builder's warranty inspection?",
+    a: "Schedule your builder's warranty inspection during the 11th month after closing on your new construction home. This gives you time to receive the report and submit warranty claims to your builder before the 12-month warranty expires. Many new homeowners in Wellington, Jupiter, and West Palm Beach miss this critical deadline.",
+  },
+  {
+    q: "What does a builder's warranty inspection cover?",
+    a: "The inspection covers all accessible systems and components including roof installation quality, stucco or siding, windows, doors, electrical, plumbing, HVAC, drywall, paint, cabinetry, flooring, grading, and drainage. We look for construction defects and workmanship issues that the builder is obligated to repair under warranty.",
+  },
+  {
+    q: "How is a builder's warranty inspection different from a regular home inspection?",
+    a: "While both follow InterNACHI Standards of Practice, a warranty inspection focuses specifically on construction quality and workmanship deficiencies that should be corrected by the builder. In Palm Beach County's new developments, common findings include settling cracks, improper stucco application, and HVAC duct leaks.",
+  },
+  {
+    q: "How much does a builder's warranty inspection cost?",
+    a: "Builder's warranty inspection pricing is comparable to a standard home inspection and varies based on the size of your new construction home. The cost is minimal compared to the thousands of dollars in repairs you could avoid by catching defects while they are still covered under warranty. Call (561) 565-8513 for a quote.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -51,6 +80,10 @@ export default function BuildersWarrantyInspectionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -328,6 +361,25 @@ export default function BuildersWarrantyInspectionPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

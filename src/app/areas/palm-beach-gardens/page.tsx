@@ -60,6 +60,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Palm Beach Gardens do you serve?",
+    a: "We serve all of Palm Beach Gardens including PGA National, Old Palm, Mirasol, The Gardens, Frenchman's Reserve, Evergrene, and neighborhoods along PGA Boulevard and Northlake Boulevard. From resort-style golf communities to family neighborhoods, we provide thorough inspections throughout Palm Beach Gardens.",
+  },
+  {
+    q: "How much does a home inspection cost in Palm Beach Gardens?",
+    a: "Home inspection pricing in Palm Beach Gardens ranges from $350 to $550 depending on property size, age, and inspection type. Properties in larger communities like PGA National or Mirasol may vary based on square footage. Call (561) 565-8513 for an exact quote for your Palm Beach Gardens property.",
+  },
+  {
+    q: "Do you offer home maintenance inspections in Palm Beach Gardens?",
+    a: "Yes, we offer annual home maintenance inspections for current homeowners in Palm Beach Gardens who want to stay ahead of repairs. Florida's climate puts extra stress on roofing, HVAC, and exterior finishes, so regular inspections help you catch small problems before they become costly repairs.",
+  },
+  {
+    q: "How do I schedule an inspection in Palm Beach Gardens?",
+    a: "Schedule your Palm Beach Gardens home inspection by calling or texting (561) 565-8513, or book online through our HomeGauge scheduling portal. We serve all of Palm Beach Gardens and northern Palm Beach County with convenient scheduling to fit your real estate closing timeline.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function PalmBeachGardensPage() {
   return (
     <>
@@ -82,6 +111,10 @@ export default function PalmBeachGardensPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -293,6 +326,25 @@ export default function PalmBeachGardensPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

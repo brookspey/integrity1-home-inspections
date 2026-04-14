@@ -59,6 +59,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Boynton Beach do you serve?",
+    a: "We serve all of Boynton Beach including Canyon Lakes, Indian Spring, Leisureville, Aberdeen, Hunters Run, and neighborhoods along Congress Avenue and Federal Highway. From gated communities in western Boynton Beach to waterfront properties near the Intracoastal, we inspect throughout the entire city.",
+  },
+  {
+    q: "How much does a home inspection cost in Boynton Beach?",
+    a: "Home inspection costs in Boynton Beach typically range from $350 to $500 based on property size and age. Many Boynton Beach homeowners also bundle a 4-point inspection or wind mitigation inspection for insurance purposes. Call (561) 565-8513 for a personalized quote for your Boynton Beach property.",
+  },
+  {
+    q: "Do you offer 4-point inspections in Boynton Beach?",
+    a: "Yes, we offer 4-point inspections throughout Boynton Beach. Many homes in established Boynton Beach neighborhoods were built in the 1980s and 1990s and require this inspection for insurance. We complete the standard forms accepted by all Florida insurance carriers with fast turnaround for your deadline.",
+  },
+  {
+    q: "How do I schedule an inspection in Boynton Beach?",
+    a: "Schedule your Boynton Beach home inspection by calling or texting (561) 565-8513, or book online through our HomeGauge scheduling system. We serve all of Boynton Beach and central Palm Beach County with flexible availability to fit your schedule and closing timeline.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function BoyntonBeachPage() {
   return (
     <>
@@ -81,6 +110,10 @@ export default function BoyntonBeachPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -290,6 +323,25 @@ export default function BoyntonBeachPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

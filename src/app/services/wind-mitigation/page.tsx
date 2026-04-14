@@ -21,6 +21,35 @@ const inspectionItems = [
   "Photographic evidence of all wind-resistant features for insurance submission",
 ];
 
+const faqs = [
+  {
+    q: "How much can I save on insurance with a wind mitigation inspection?",
+    a: "Homeowners in Palm Beach County typically save between $500 and $2,000 per year on insurance premiums after a wind mitigation inspection documents qualifying features. Homes built after 2002 or those with impact windows, hurricane shutters, and hip roofs tend to receive the largest discounts from Florida insurers.",
+  },
+  {
+    q: "What features are inspected during a wind mitigation inspection?",
+    a: "The inspection evaluates your roof covering type and age, roof deck attachment method, roof-to-wall connections, roof shape, secondary water resistance barriers, and opening protection including impact windows, hurricane shutters, and reinforced garage doors. Joel documents each feature with photos using the official OIR-B1-1802 form.",
+  },
+  {
+    q: "Is a wind mitigation inspection required in Florida?",
+    a: "While not legally required, Florida law mandates that insurance companies offer premium discounts for verified wind-resistant features. Without the inspection, you may be paying significantly more than necessary for homeowners insurance in West Palm Beach, Boca Raton, Jupiter, and throughout Palm Beach County.",
+  },
+  {
+    q: "How often do I need a wind mitigation inspection?",
+    a: "A wind mitigation inspection report is valid for five years in Florida. You should schedule a new inspection if you make improvements like installing impact windows, replacing your roof, or adding hurricane shutters. These upgrades in Delray Beach or Wellington homes can qualify you for additional insurance credits.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -47,6 +76,10 @@ export default function WindMitigationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero Section */}
@@ -322,6 +355,25 @@ export default function WindMitigationPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

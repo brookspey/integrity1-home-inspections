@@ -59,6 +59,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Jupiter do you serve?",
+    a: "We serve all of Jupiter including Abacoa, Jupiter Farms, Indiantown Road corridor, Jupiter Inlet Colony, Jonathan's Landing, Admiral's Cove, and the Loxahatchee River neighborhoods. From waterfront properties to golf course communities, we provide detailed inspections throughout the entire Jupiter area.",
+  },
+  {
+    q: "How much does a home inspection cost in Jupiter?",
+    a: "Home inspection pricing in Jupiter varies from $350 to $550 based on the property's size, age, and inspection type. Larger estates in communities like Admiral's Cove or Jonathan's Landing may be higher. Contact us at (561) 565-8513 for an accurate quote specific to your Jupiter property.",
+  },
+  {
+    q: "Do you offer pool inspections in Jupiter?",
+    a: "Yes, we offer visual pool inspections throughout Jupiter. Given the high percentage of homes with pools in this area, our pool inspection covers the shell, deck, equipment, safety barriers, and electrical bonding. Many Jupiter homebuyers add a pool inspection to their standard home inspection for complete coverage.",
+  },
+  {
+    q: "How do I schedule an inspection in Jupiter?",
+    a: "You can schedule your Jupiter home inspection by calling or texting (561) 565-8513, or by booking online through our HomeGauge scheduling system. We serve Jupiter and northern Palm Beach County with flexible scheduling to meet your real estate transaction deadlines.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function JupiterPage() {
   return (
     <>
@@ -81,6 +110,10 @@ export default function JupiterPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -290,6 +323,25 @@ export default function JupiterPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 

@@ -59,6 +59,35 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    q: "What areas in Boca Raton do you serve?",
+    a: "We serve all of Boca Raton including Boca West, Woodfield Country Club, The Bridges, Royal Palm Yacht & Country Club, Boca Raton Square, Mizner Park, and communities along the A1A corridor. Whether you are in east Boca near the beach or west Boca in the newer developments, we provide the same thorough inspection service.",
+  },
+  {
+    q: "How much does a home inspection cost in Boca Raton?",
+    a: "Home inspection pricing in Boca Raton typically ranges from $350 to $550 depending on the property size, age, and type of inspection needed. Condos along the A1A corridor and larger single-family homes in Boca West may vary. Call (561) 565-8513 for an exact quote tailored to your specific Boca Raton property.",
+  },
+  {
+    q: "Do you offer 4-point and wind mitigation inspections in Boca Raton?",
+    a: "Yes, we offer all inspection types in Boca Raton including 4-point inspections for insurance, wind mitigation inspections for premium discounts, buyer's inspections, pre-listing inspections, pool inspections, and builder's warranty inspections. Many Boca Raton homeowners bundle the 4-point and wind mitigation together.",
+  },
+  {
+    q: "How do I schedule an inspection in Boca Raton?",
+    a: "You can schedule your Boca Raton home inspection by calling or texting (561) 565-8513, or by booking online through our HomeGauge scheduling system. We offer flexible scheduling including early morning appointments to accommodate your real estate closing timeline in the Boca Raton market.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function BocaRatonPage() {
   return (
     <>
@@ -81,6 +110,10 @@ export default function BocaRatonPage() {
             },
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Hero */}
@@ -288,6 +321,25 @@ export default function BocaRatonPage() {
             </li>
             <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section style={{ backgroundColor: "#f9f9f9", padding: "54px 0" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px" }}>
+          <h2 className="font-heading" style={{ fontSize: 28, fontWeight: 900, color: "rgb(38, 53, 86)", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          {faqs.map((faq, i) => (
+            <details key={i} style={{ borderBottom: "1px solid #e0e0e0", padding: "16px 0" }}>
+              <summary style={{ fontSize: 16, fontWeight: 600, color: "rgb(38, 53, 86)", cursor: "pointer", listStyle: "none" }}>
+                {faq.q}
+              </summary>
+              <p style={{ fontSize: 16, lineHeight: "27px", color: "#666", marginTop: 12, paddingLeft: 0 }}>
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </section>
 
