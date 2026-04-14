@@ -62,6 +62,11 @@ const services = [
 export default function WestPalmBeachPage() {
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .area-btn-book { transition: background-color 0.2s, color 0.2s; }
+        .area-btn-book:hover { background-color: white !important; color: #2EA3F2 !important; }
+      ` }} />
+
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -211,9 +216,11 @@ export default function WestPalmBeachPage() {
               <div
                 key={service.title}
                 style={{
-                  border: "1px solid #e0e0e0",
+                  backgroundColor: "white",
                   padding: 24,
-                  borderRadius: 4,
+                  borderRadius: 8,
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+                  borderLeft: "4px solid #2EA3F2",
                 }}
               >
                 <h3
@@ -273,18 +280,19 @@ export default function WestPalmBeachPage() {
               fontSize: 16,
               lineHeight: "32px",
               color: "#666",
-              paddingLeft: 20,
+              paddingLeft: 0,
               marginBottom: 40,
+              listStyle: "none",
             }}
           >
-            <li>InterNACHI Certified Professional Inspector</li>
-            <li>Florida Licensed — HI13212</li>
-            <li>Perfect 5.0-star Google rating (35 reviews)</li>
-            <li>E&amp;O and General Liability insured</li>
+            <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>InterNACHI Certified Professional Inspector</li>
+            <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Florida Licensed — HI13212</li>
+            <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Perfect 5.0-star Google rating (35 reviews)</li>
+            <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>E&amp;O and General Liability insured</li>
             <li>
-              Military, veteran, teacher &amp; first-time buyer discounts
+              <span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Military, veteran, teacher &amp; first-time buyer discounts
             </li>
-            <li>Detailed digital reports via HomeGauge</li>
+            <li><span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>Detailed digital reports via HomeGauge</li>
           </ul>
         </div>
       </section>
@@ -313,14 +321,15 @@ export default function WestPalmBeachPage() {
 
           <p
             style={{
-              fontSize: 24,
+              fontSize: 28,
+              fontWeight: 900,
               color: "white",
               marginBottom: 8,
             }}
           >
             <a
               href="tel:1-561-565-8513"
-              style={{ color: "#2EA3F2", textDecoration: "none" }}
+              style={{ color: "#2EA3F2", textDecoration: "none", fontSize: 28, fontWeight: 900 }}
             >
               (561) 565-8513
             </a>
@@ -339,6 +348,7 @@ export default function WestPalmBeachPage() {
           </p>
 
           <a
+            className="area-btn-book"
             href="https://www.homegauge.com/appointment/schedule.htmls?companyId=47338"
             target="_blank"
             rel="noopener noreferrer"

@@ -37,6 +37,13 @@ const jsonLd = {
 export default function WindMitigationPage() {
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .svc-btn-sidebar { transition: background-color 0.2s, color 0.2s; }
+        .svc-btn-sidebar:hover { background-color: #2EA3F2 !important; color: white !important; }
+        .svc-btn-bottom { transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+        .svc-btn-bottom:hover { background-color: white !important; color: rgb(62, 100, 175) !important; border-color: white !important; }
+      ` }} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -200,12 +207,14 @@ export default function WindMitigationPage() {
                 fontSize: 16,
                 lineHeight: "27px",
                 color: "#666",
-                paddingLeft: 20,
+                paddingLeft: 0,
                 margin: 0,
+                listStyle: "none",
               }}
             >
               {inspectionItems.map((item) => (
                 <li key={item} style={{ marginBottom: 6 }}>
+                  <span style={{ color: "#2EA3F2", fontWeight: 700, marginRight: 8 }}>✓</span>
                   {item}
                 </li>
               ))}
@@ -219,6 +228,7 @@ export default function WindMitigationPage() {
                 backgroundColor: "rgb(38, 53, 86)",
                 padding: 32,
                 borderRadius: 8,
+                boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
                 position: "sticky" as const,
                 top: 100,
               }}
@@ -261,6 +271,7 @@ export default function WindMitigationPage() {
               </a>
 
               <a
+                className="svc-btn-sidebar"
                 href="https://www.homegauge.com/appointment/schedule.htmls?companyId=47338"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -318,7 +329,7 @@ export default function WindMitigationPage() {
       <section
         style={{
           backgroundColor: "rgb(62, 100, 175)",
-          padding: "48px 0",
+          padding: "60px 0",
           textAlign: "center",
         }}
       >
@@ -352,6 +363,7 @@ export default function WindMitigationPage() {
             teachers, and first-time homebuyers.
           </p>
           <a
+            className="svc-btn-bottom"
             href="https://www.homegauge.com/appointment/schedule.htmls?companyId=47338"
             target="_blank"
             rel="noopener noreferrer"
