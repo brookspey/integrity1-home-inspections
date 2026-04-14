@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AreaOfOperationSection } from "@/components/AreaOfOperationSection";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Home Inspector in Wellington, FL",
@@ -127,6 +128,12 @@ export default function WellingtonPage() {
           </p>
         </div>
       </section>
+
+      <Breadcrumb items={[
+        { label: "Home", href: "/" },
+        { label: "Service Areas", href: "/areas" },
+        { label: "Wellington" },
+      ]} />
 
       {/* Main Content */}
       <section style={{ backgroundColor: "white", padding: "54px 0" }}>

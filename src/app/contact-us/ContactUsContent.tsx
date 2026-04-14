@@ -127,66 +127,126 @@ export default function ContactUsContent() {
               gap: 12,
             }}
           >
-            <input
-              type="text"
-              placeholder="Name (Required)"
-              required
-              style={{
-                width: "100%",
-                padding: 10,
-                border: "none",
-                borderRadius: 5,
-                backgroundColor: "rgb(237, 237, 237)",
-                fontSize: 15,
-                color: "rgb(78, 78, 78)",
-                boxSizing: "border-box",
-              }}
-            />
-            <input
-              type="email"
-              placeholder="E-mail (Required)"
-              required
-              style={{
-                width: "100%",
-                padding: 10,
-                border: "none",
-                borderRadius: 5,
-                backgroundColor: "rgb(237, 237, 237)",
-                fontSize: 15,
-                color: "rgb(78, 78, 78)",
-                boxSizing: "border-box",
-              }}
-            />
-            <input
-              type="tel"
-              placeholder="Daytime Phone # (Required)"
-              required
-              style={{
-                width: "100%",
-                padding: 10,
-                border: "none",
-                borderRadius: 5,
-                backgroundColor: "rgb(237, 237, 237)",
-                fontSize: 15,
-                color: "rgb(78, 78, 78)",
-                boxSizing: "border-box",
-              }}
-            />
-            <textarea
-              placeholder="How can we help?"
-              rows={4}
-              style={{
-                width: "100%",
-                padding: 10,
-                border: "none",
-                borderRadius: 5,
-                backgroundColor: "rgb(237, 237, 237)",
-                fontSize: 15,
-                color: "rgb(78, 78, 78)",
-                boxSizing: "border-box",
-                resize: "vertical",
-              }}
-            />
+            <div>
+              <label
+                htmlFor="contact-name"
+                style={{
+                  display: "block",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  color: "rgb(38, 53, 86)",
+                  marginBottom: 4,
+                }}
+              >
+                Name
+              </label>
+              <input
+                id="contact-name"
+                type="text"
+                placeholder="Name (Required)"
+                required
+                style={{
+                  width: "100%",
+                  padding: 10,
+                  border: "none",
+                  borderRadius: 5,
+                  backgroundColor: "rgb(237, 237, 237)",
+                  fontSize: 15,
+                  color: "rgb(78, 78, 78)",
+                  boxSizing: "border-box",
+                }}
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="contact-email"
+                style={{
+                  display: "block",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  color: "rgb(38, 53, 86)",
+                  marginBottom: 4,
+                }}
+              >
+                Email
+              </label>
+              <input
+                id="contact-email"
+                type="email"
+                placeholder="E-mail (Required)"
+                required
+                style={{
+                  width: "100%",
+                  padding: 10,
+                  border: "none",
+                  borderRadius: 5,
+                  backgroundColor: "rgb(237, 237, 237)",
+                  fontSize: 15,
+                  color: "rgb(78, 78, 78)",
+                  boxSizing: "border-box",
+                }}
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="contact-phone"
+                style={{
+                  display: "block",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  color: "rgb(38, 53, 86)",
+                  marginBottom: 4,
+                }}
+              >
+                Phone
+              </label>
+              <input
+                id="contact-phone"
+                type="tel"
+                placeholder="Daytime Phone # (Required)"
+                required
+                style={{
+                  width: "100%",
+                  padding: 10,
+                  border: "none",
+                  borderRadius: 5,
+                  backgroundColor: "rgb(237, 237, 237)",
+                  fontSize: 15,
+                  color: "rgb(78, 78, 78)",
+                  boxSizing: "border-box",
+                }}
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="contact-message"
+                style={{
+                  display: "block",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  color: "rgb(38, 53, 86)",
+                  marginBottom: 4,
+                }}
+              >
+                Message
+              </label>
+              <textarea
+                id="contact-message"
+                placeholder="How can we help?"
+                rows={4}
+                style={{
+                  width: "100%",
+                  padding: 10,
+                  border: "none",
+                  borderRadius: 5,
+                  backgroundColor: "rgb(237, 237, 237)",
+                  fontSize: 15,
+                  color: "rgb(78, 78, 78)",
+                  boxSizing: "border-box",
+                  resize: "vertical",
+                }}
+              />
+            </div>
             <div style={{ textAlign: "center", marginTop: 16 }}>
               <button
                 type="submit"

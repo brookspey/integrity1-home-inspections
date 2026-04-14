@@ -4,6 +4,7 @@ import "./globals.css";
 import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MobileCTA } from "@/components/MobileCTA";
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
@@ -118,6 +119,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <MobileCTA />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
